@@ -54,4 +54,33 @@ func main() {
 
 	array2[1] = "Posição alerada" // alterando conteúdo do indice 1
 	fmt.Println(slice2)
+
+	// ARRAYS INTERNOS
+
+	// função make é uma função que vai alocar um espaço na memória para uma determinada coisa do nosso programa
+	// pode usar para slice, e para outras ferramentas também.
+
+	// a função make recebe três parametros, eles são: tipo(string, int),
+	//tamanho(quantidade de itens que ele tem), capacidade(quantidade máxima que ele pode ter)
+	fmt.Println("----------------------------------")
+
+	slice3 := make([]float32, 10, 11)
+	fmt.Println(slice3)
+
+	slice3 = append(slice3, 5)
+	slice3 = append(slice3, 6)
+
+	fmt.Println(slice3)
+	fmt.Println(len(slice3)) //length
+	fmt.Println(cap(slice3)) //capacidade
+
+	slice4 := make([]float32, 5)
+	fmt.Println(slice4)
+	slice4 = append(slice4, 10)
+	fmt.Println(len(slice4)) //length
+	fmt.Println(cap(slice4)) //capacidade
+
+	// Slice não tem limite de tamanho. Quando você estoura essa capacidade, o que acontece é que internamente
+	// o próprio go irá criar um novo array interno com o tamanho duplicado.
+
 }
